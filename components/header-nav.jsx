@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "./logo";
+import { ModeToggle } from "./mode-toggle";
 
 export default function HeaderNav() {
   return (
@@ -11,7 +12,7 @@ export default function HeaderNav() {
           <span className="text-primary text-xl font-bold">CineScope</span>         
         </Link>
 
-        <nav className="ml-auto flex  gap-4">
+        <nav className="ml-auto flex items-center  gap-4 ">
           <Link
             href="/"
             className="hover:text-primary text-sm font-medium transition-colors"
@@ -36,6 +37,7 @@ export default function HeaderNav() {
           >
             Admin
           </Link>
+          <ModeToggle/>
         </nav>
       </div>
     </header>
