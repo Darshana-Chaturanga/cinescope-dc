@@ -14,13 +14,7 @@ export function ModeToggle() {
         //   theme === "dark" ? "text-red-500" : "text-blue-500"
         // )}
 
-        // className={`h-9 w-9 ${
-        //   theme === "dark" ? "text-red-500" : "text-blue-500"
-        // }`}
 
-        className="h-9 w-9"
-      >
-        <Sun/>
       </Button>
     </div>
   );
