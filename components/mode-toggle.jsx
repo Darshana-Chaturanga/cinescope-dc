@@ -5,17 +5,10 @@ export function ModeToggle() {
   const theme = "dark";
 
   return (
-    <div>
-      <Button
-        variant="ghost"
-        size="icon"
-        // className={cn(
-        //   "h-9 w-9",
-        //   theme === "dark" ? "text-red-500" : "text-blue-500"
-        // )}
-
-
+    (
+      <Button variant="ghost" size="icon" className="h-9 w-9">
+        <Sun className="h-[1.2rem] w-[1.2rem]" />
       </Button>
-    </div>
+    )
   );
 }
