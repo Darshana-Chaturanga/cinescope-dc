@@ -5,7 +5,7 @@ import { ModeToggle } from "./mode-toggle";
 export default function HeaderNav() {
   return (
     <header className="border-primary/20 bg-background sticky top-0 z-50 w-full border-b">
-      <div className="container flex h-16 items-center ">
+      <div className="container flex h-16 items-center ml-auto mr-auto">
         <Link href="/" className="flex items-center gap-2">
           {/* logo component */}
           <Logo className="h-10 w-10"/>
