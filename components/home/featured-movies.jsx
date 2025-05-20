@@ -1,9 +1,8 @@
 import { Button } from "@/components/ui/button";
-import MoviesList from "./movies-list";
+import MoviesList, { MoviesListSkeleton } from "./movies-list";
 import { Suspense } from "react";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
-
 
 
 export default function FeaturedMovies() {
@@ -37,12 +36,9 @@ export default function FeaturedMovies() {
             </div>
           </div>
 
+          {/* <MoviesListSkeleton/> */}
           {/* Movies Card Here */}
-          <Suspense
-            fallback={
-              <div className="h-69 animate-pulse rounded-lg bg-muted" />
-            }
-          >
+          <Suspense fallback={<MoviesListSkeleton/>}>
             <MoviesList />
           </Suspense>
         </div>
