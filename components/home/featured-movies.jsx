@@ -4,7 +4,6 @@ import { Suspense } from "react";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
-
 export default function FeaturedMovies() {
   return (
     <section id="featured">
@@ -38,7 +37,7 @@ export default function FeaturedMovies() {
 
           {/* <MoviesListSkeleton/> */}
           {/* Movies Card Here */}
-          <Suspense fallback={<MoviesListSkeleton/>}>
+          <Suspense fallback={<MoviesListSkeleton />}>
             <MoviesList />
           </Suspense>
         </div>
