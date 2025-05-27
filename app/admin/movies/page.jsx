@@ -1,8 +1,8 @@
 import AddMovieDialog from "./add-movie-dialog";
 import MovieData from "./movie-data";
 
-
 export default function MoviesPage() {
+
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">

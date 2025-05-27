@@ -14,8 +14,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { createMovie } from "@/actions/movies";
+import { getAllYears } from "@/lib/utils";
 
 export function AddMovieForm({onClose}) { //de structure the prop and get only onClose
+  
+  const years = getAllYears();
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
   // Controled selected year state
   const [selectedYear, setSelectedYear] = useState(null);
@@ -92,9 +96,8 @@ export function AddMovieForm({onClose}) { //de structure the prop and get only o
               <SelectValue placeholder="Select year" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="2025">2025</SelectItem>
-              <SelectItem value="2024">2024</SelectItem>
-              <SelectItem value="2023">2023</SelectItem>
+              {years.map((year)=>(<SelectItem key={year} value={year}>{year}</SelectItem>))}
+              
             </SelectContent>
           </Select>
         </div>
