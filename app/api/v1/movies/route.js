@@ -19,3 +19,12 @@ export const GET = async () => {
     );
   }
 };
+
+export const POST = async () => {
+  //Movies update endpoint
+  return  NextResponse.json({message: "Movie updated"}, {status: 200});
+}
+
+
+
+

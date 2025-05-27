@@ -15,8 +15,12 @@ import { DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { createMovie } from "@/actions/movies";
 
-export function AddMovieForm() {
+export function AddMovieForm({onClose}) { //de structure the prop and get only onClose
   const [isSubmitting, setIsSubmitting] = useState(false);
+  // Controled selected year state
+  const [selectedYear, setSelectedYear] = useState(null);
+  const [selectedGenre, setSelectedGenre] = useState(null);
+  const [selectedStatus, setSelectedStatus] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -77,7 +81,13 @@ export function AddMovieForm() {
         </div>
         <div className="space-y-2">
           <Label htmlFor="year">Year</Label>
-          <Select id="year" name="year" required>
+          <Select
+            id="year"
+            name="year"
+            required
+            value={selectedYear}
+            onValueChange={setSelectedYear}
+          >
             <SelectTrigger className="w-full">
               <SelectValue placeholder="Select year" />
             </SelectTrigger>
@@ -95,7 +105,13 @@ export function AddMovieForm() {
         </div>
         <div className="space-y-2">
           <Label htmlFor="genre">Genre</Label>
-          <Select id="genre" name="genre" required>
+          <Select
+            id="genre"
+            name="genre"
+            required
+            value={selectedGenre}
+            onValueChange={setSelectedGenre}
+          >
             <SelectTrigger className="w-full">
               <SelectValue placeholder="Select genre" />
             </SelectTrigger>
@@ -164,7 +180,13 @@ export function AddMovieForm() {
 
         <div className="space-y-2">
           <Label htmlFor="status">Status</Label>
-          <Select id="status" name="status" required>
+          <Select
+            id="status"
+            name="status"
+            required
+            value={selectedStatus}
+            onValueChange={setSelectedStatus}
+          >
             <SelectTrigger className="w-full">
               <SelectValue placeholder="Select status" />
             </SelectTrigger>
@@ -178,7 +200,19 @@ export function AddMovieForm() {
       </div>
 
       <DialogFooter>
-        <Button type="button" variant="outline" className="min-w-[102px]">
+        <Button
+          type="reset"
+          variant="outline"
+          className="min-w-[102px]"
+          disabled={isSubmitting}
+          onClick={() => {
+            setSelectedYear(null);
+            setSelectedGenre(null);
+            setSelectedStatus(null);
+            //close the dialog
+            onClose(false);
+          }}
+        >
           Cancel
         </Button>
         <Button type="submit" className="min-w-[102px]" disabled={isSubmitting}>
