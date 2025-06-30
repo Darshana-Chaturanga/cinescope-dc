@@ -28,7 +28,7 @@ export default function AddMovieDialog() {
         <DialogHeader>
           <DialogTitle>Add New Movie</DialogTitle>
           <DialogDescription>
-            Fill in the details to add anew movie to your catalog
+            Fill in the details to add a new movie to your catalog
           </DialogDescription>
         </DialogHeader>
         {/* Add Movie Form */}
